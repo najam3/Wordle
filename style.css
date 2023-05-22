@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Raleway:wght@500&display=swap');
+  body {
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+.wordle {
+    width: 700px;
+    margin: 0 auto;
+}
+   .keyboard .row {
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 0.2em;
+    justify-content: center;
+   }
+   .keyboard .row h3 {
+    border: 1px solid white;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    padding: 0.5em;
+    background-color: #D5D6DB;
+    font-weight: bolder;
+    min-width: 50px;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+
+   }
+   .keyboard {
+    margin-top: 2em;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+   }
+
+ .keyboard .row h3:hover {
+  cursor: pointer;
+  transform: scale(1.2, 1.2);
+  transition: 100ms linear all;
+  
+}
+
+
+.effect {
+    animation: scale 200ms ease-in-out forwards;
+}
+
+@keyframes scale {
+ 0% {
+    transform: scale(1, 1);
+ }
+      
+ 50% {
+    transform: scale(1.2, 1.2);
+ }
+
+ 100% {
+    transform: scale(1, 1);
+ }
+}
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: rgb(0, 0, 0);
+      padding: 0.5em;
+      font-size: 32px;
+      width: 100%;
+      margin: 0 auto;
+  
+    }
+ 
+
+
+  .game-area .father {
+
+    min-height: 80px;
+    min-width: 80px;
+    border: 1px solid red;
+    border: 3px solid #D5D6D8;
+    background-color: white;
+    font-size: 24px;
+    color: #88898b;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+  };
+
+   .game-area h2 {
+    margin: 0;
+   }
+ 
+   .rotate {
+    animation: rotate 400ms ease;
+   }
+
+@keyframes rotate {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+   100% {
+        transform: rotateX(180deg);
+    }
+
+   
+}
+   .game-area {
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap;
+     width:450px; 
+     margin: 0 auto;
+      justify-content: center;
+      margin-top: 2em;
+      gap: 0.5em;
+   }
+
+@media (max-width: 500px) {
+     .wordle {
+      width: 500px;
+     }
+     .game-area h2 {
+        min-width: 70px;
+        min-height: 70px;
+     }
+     .keyboard {
+        width: 500px;
+        margin-top: 4em;
+     }
+     .keyboard .row h3 {
+        font-size: 18px;
+        min-width: 35px;
+        min-height: 35px;
+     }
+};
+
