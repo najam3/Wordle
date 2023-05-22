@@ -2,7 +2,9 @@
 
 const words = ["FAIRY", "CROWN", "TRIED", "TOMBS"]
 
-const arr = ["B", "O", "O", "T", "Y"];
+
+
+const arr = ["D", "R", "O", "N", "E"];
 
 let input = [];
 const result = document.querySelectorAll('#result');

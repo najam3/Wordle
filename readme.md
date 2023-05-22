@@ -8,11 +8,3 @@ There are many algorithms that can be used to compare two arrays and find out if
 
 - **Subtraction method**: This method subtracts each element of one array from the corresponding element of the other array and then sums up all the differences. If the sum is zero, it means that both arrays have identical members; otherwise, they don't have identical members.
 
-Which algorithm you choose depends on your specific use case and requirements.
-
-I hope this helps! Let me know if you have any more questions.
-
-Source: Conversation with Bing, 5/11/2023
-(1) Algorithm to tell if two arrays have identical members. https://stackoverflow.com/questions/245509/algorithm-to-tell-if-two-arrays-have-identical-members.
-(2) How can I find matching values in two arrays? - Stack Overflow. https://stackoverflow.com/questions/12433604/how-can-i-find-matching-values-in-two-arrays.
-(3) What could be the most efficient algorithm to compare two unsorted arrays?. https://cs.stackexchange.com/questions/144568/what-could-be-the-most-efficient-algorithm-to-compare-two-unsorted-arrays.
