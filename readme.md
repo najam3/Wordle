@@ -8,3 +8,4 @@ There are many algorithms that can be used to compare two arrays and find out if
 
 - **Subtraction method**: This method subtracts each element of one array from the corresponding element of the other array and then sums up all the differences. If the sum is zero, it means that both arrays have identical members; otherwise, they don't have identical members.
 
+   live demo [https://najam3.github.io/Wordle/]
