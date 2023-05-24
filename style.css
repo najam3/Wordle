@@ -39,10 +39,13 @@
    .keyboard {
     margin-top: 2em;
     max-width: 100%;
+    /* min-width: 375px; */
     display: flex;
     flex-direction: column;
     gap: 0.2em;
+    
    }
+
 
  .keyboard .row h3:hover {
   cursor: pointer;
@@ -85,9 +88,9 @@
 
 
   .game-area .father {
-
-    min-height: 80px;
-    min-width: 80px;
+     width: 80px;
+     height: 80px;
+  
     border: 1px solid red;
     border: 3px solid #D5D6D8;
     background-color: white;
@@ -118,11 +121,12 @@
    
 }
    .game-area {
-    display: flex; 
-    flex-direction: row; 
-    flex-wrap: wrap;
-     width:450px; 
-     margin: 0 auto;
+      display: flex; 
+      flex-direction: row; 
+      flex-wrap: wrap;
+      width: 70%; 
+      min-width: 375px;
+      margin: 0 auto;
       justify-content: center;
       margin-top: 2em;
       gap: 0.5em;

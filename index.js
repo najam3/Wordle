@@ -2,10 +2,8 @@
 
 const words = ["FAIRY", "CROWN", "TRIED", "TOMBS"]
 
-
-
-const arr = ["D", "R", "O", "N", "E"];
-
+const arr = words[Math.floor(Math.random() * words.length)].split("");
+console.log(arr)
 let input = [];
 const result = document.querySelectorAll('#result');
 const keyboard = document.querySelector('.keyboard');
@@ -47,16 +45,16 @@ let myArr = []
      
       if ( letter === 'ENTER' && positionTracker.length === 5 ) {  
          if ( arr[i] === guesses[currentGuess][i] ) {
-          result[positionTracker[i]].style.color = '#fff';      
-          result[positionTracker[i]].style.backgroundColor = '#6BAA65';
+          const props = { index: positionTracker[i], bgColor: '#6BAA65', color: '#fff', txt: guess, position:  i === 4 ? 4 : i   };
+          addColorToBoard(props);     
 
           } else if( arr.includes(guesses[currentGuess][i] ) && arr[i] !== guesses[currentGuess][i] ) {
-              result[positionTracker[i]].style.backgroundColor = '#CAB459';
-              result[positionTracker[i]].style.color = '#fff';
+            const props = { index: positionTracker[i], bgColor:  '#CAB459', color: '#fff', txt: guess, position:  i === 4 ? 4 : i  }; 
+            addColorToBoard(props);  
           } 
           else {
-            result[positionTracker[i]].style.color = '#fff';
-            result[positionTracker[i]].style.backgroundColor = '#777C7F';
+            const props = { index: positionTracker[i], bgColor:  '#777C7F', color: '#fff', txt: guess, position: i === 4 ? 4 : i  };
+            addColorToBoard(props);
           }
       }
    });
@@ -69,10 +67,7 @@ let myArr = []
      removeMouseEvent(originalWord, inputWord)
      removeKeyEvent(originalWord, inputWord);
   
-     positionTracker.forEach(index => {
-      const elemProps = {  bgColor:result[index].style.backgroundColor, txt: result[index].innerText };
-      addColorToKeys(elemProps)
-  });
+  
 
       input = [];
       guesses.push([]);
@@ -80,11 +75,6 @@ let myArr = []
       positionTracker = [];
    };
   }
-
-
-
-
-
 
 
 
@@ -129,7 +119,7 @@ guesses[currentGuess].forEach((guess, i) => {
 
     else if( arr.includes(guesses[currentGuess][i]) && arr[i] !== guesses[currentGuess][i]  ) {
       let a  = guesses[currentGuess].filter(word => word === arr[i]);
-      console.log(a);
+      
       const props = { index: positionTracker[i], bgColor:  '#CAB459', color: '#fff', txt: guess, position:  i === 4 ? 4 : i  }; 
       addColorToBoard(props);  
      }
@@ -147,6 +137,11 @@ if( letter === 'ENTER' && positionTracker.length === 5 ) {
 
      removeMouseEvent(originalWord, inputWord);
      removeKeyEvent(originalWord, inputWord);
+ 
+     originalWord === inputWord ? setTimeout(() => {
+            alert('You guessed it right!')
+     }, 2500) : ""
+
    input = [];
    guesses.push([]);
    currentGuess++;
@@ -157,15 +152,19 @@ if( letter === 'ENTER' && positionTracker.length === 5 ) {
 
 
 const removeMouseEvent = (word, guess) => {
-     keys.forEach(key => {
-      word === guess ? key.removeEventListener('click', startGame) : ''
-     });
+     
+   keys.forEach(key => {
+  
+    if(word === guess) 
    
+       {
+        key.removeEventListener('click', startGame);
+       }
+  });
 }
 
 const removeKeyEvent = (word, guess) => {
-  
-  word === guess ? window.removeEventListener('keydown', startWithKeyboard) : ''
+   word === guess ? window.removeEventListener('keydown', startWithKeyboard) : ''
 }
 
 
@@ -213,8 +212,13 @@ const addAnimation = (letter) => {
  })
 };
 
+
+
+
 window.addEventListener('keydown', startWithKeyboard);
 keys.forEach(key => {
   key.addEventListener('click', startGame);
-})
+});
+
+
 
