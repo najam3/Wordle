@@ -10,18 +10,50 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+
+  .game-wrapper {
+   display: flex;
+   align-items: center;
+   width: 100%;
+ }
+
+ .game-wrapper h1 {
+   text-align: center;
+   flex: 1;
+ }
+.incorrect-words{
+   flex: 2;
+}
+
 .wordle {
-    width: 700px;
+    width: 100%;
     margin: 0 auto;
 }
-   .keyboard .row {
+
+.logo > span {
+   font-size: 14px;
+   font-weight: bold;
+   border: 1px solid black;
+   padding: 0.5em 1em;
+}
+
+.settings > span {
+   font-size: 14px;
+   font-weight: bold;
+   border: 1px solid black;
+   padding: 0.5em 1em;
+   
+}
+   .keyboard .row-1 {
     display: flex;
     align-items: center;
     color: white;
     gap: 0.2em;
     justify-content: center;
    }
-   .keyboard .row h3 {
+
+   .keyboard .row-1 h3 {
     border: 1px solid white;
     color: rgb(0, 0, 0);
     font-size: 18px;
@@ -47,7 +79,7 @@
    }
 
 
- .keyboard .row h3:hover {
+ .keyboard .row-1 h3:hover {
   cursor: pointer;
   transform: scale(1.2, 1.2);
   transition: 100ms linear all;
@@ -120,16 +152,24 @@
 
    
 }
+
+
+.game-area-2 {
+   align-self: flex-end;
+   margin-left:  auto;
+}
    .game-area {
       display: flex; 
       flex-direction: row; 
       flex-wrap: wrap;
-      width: 70%; 
+      width: 500px; 
       min-width: 375px;
-      margin: 0 auto;
       justify-content: center;
       margin-top: 2em;
       gap: 0.5em;
+      align-self: flex-end;
+      margin: 0 auto;
+      
    }
 
 @media (max-width: 500px) {
