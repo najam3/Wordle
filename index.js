@@ -67,7 +67,9 @@ let myArr = []
      removeMouseEvent(originalWord, inputWord)
      removeKeyEvent(originalWord, inputWord);
   
-  
+        if( position === result.length) {
+            alert(`Your word is ${arr.join('')} Try Again by refreshing the page...`)
+        }
 
       input = [];
       guesses.push([]);
