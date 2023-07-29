@@ -142,8 +142,8 @@ if( letter === 'ENTER' && positionTracker.length === 5 ) {
             alert('You guessed it right!')
      }, 2500) : ""
 
-if(position.length === result.length) {
-  alert(`The Word is ${arr} You've lost try again!!`)
+if(position === result.length) {
+  alert(`The Word is ${arr.join('')} You've lost try again!!`)
 }
 
   
