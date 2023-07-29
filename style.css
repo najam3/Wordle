@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Raleway:wght@500&display=swap');
   body {
     font-family: 'Quicksand', sans-serif;
@@ -132,22 +134,46 @@
       gap: 0.5em;
    }
 
-@media (max-width: 500px) {
+@media screen and (min-width: 360px ) and (max-width: 768px) {
      .wordle {
-      width: 500px;
+      width: 360px;
      }
-     .game-area h2 {
+     .game-area {
+      margin-top: 4em;
+     }
+     /* .game-area h2 {
         min-width: 70px;
         min-height: 70px;
-     }
+     } */
      .keyboard {
-        width: 500px;
+        width: 100%;
         margin-top: 4em;
      }
      .keyboard .row h3 {
-        font-size: 18px;
-        min-width: 35px;
-        min-height: 35px;
+        font-size: 12px;
+        min-width: 30px;
+        min-height: 30px;
+     }
+
+     .game-area .father {
+      width: 56px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     }
+
+     .game-area .father h2 {
+      font-size: 16px
      }
 };
 
+body{
+   z-index: -1;
+}
+.centered{
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 1;
+}
