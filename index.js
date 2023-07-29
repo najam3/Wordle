@@ -182,7 +182,9 @@ if( letter === 'ENTER' && positionTracker.length === 5 ) {
             score.innerHTML = settings.score
      }, 2500) : ""
   const myGuesses =  input.join('');
-
+if(position.length === result.length) {
+  alert(`The Word is ${arr} You've lost try again!!`)
+}
    input = [];
    guesses.push([]);
    currentGuess++;
