@@ -15,9 +15,6 @@ let position = 0;
 let positionTracker = [];
 let myArr = []
 
-
-
-
   const startGame = (e) => {
     const letter = e.target.innerText;
     
@@ -39,15 +36,13 @@ let myArr = []
   } 
   
   
-   guesses[currentGuess].forEach((guess, i) => {
+   guesses[currentGuess].forEach(  (guess, i) => {
       result[position - 1].innerHTML = guess;
-    
-     
       if ( letter === 'ENTER' && positionTracker.length === 5 ) {  
          if ( arr[i] === guesses[currentGuess][i] ) {
           const props = { index: positionTracker[i], bgColor: '#6BAA65', color: '#fff', txt: guess, position:  i === 4 ? 4 : i   };
-          addColorToBoard(props);     
-
+           addColorToBoard(props);     
+          
           } else if( arr.includes(guesses[currentGuess][i] ) && arr[i] !== guesses[currentGuess][i] ) {
             const props = { index: positionTracker[i], bgColor:  '#CAB459', color: '#fff', txt: guess, position:  i === 4 ? 4 : i  }; 
             addColorToBoard(props);  
@@ -63,18 +58,14 @@ let myArr = []
    if( letter === 'ENTER' && positionTracker.length === 5 ) {
     const originalWord = arr.join('');
     const inputWord = input.join('');
-      
-     removeMouseEvent(originalWord, inputWord)
-     removeKeyEvent(originalWord, inputWord);
-  
-        if( position === result.length) {
-            alert(`Your word is ${arr.join('')} Try Again by refreshing the page...`)
-        }
+    const correctWord = arr.join('');
+    removeMouseEvent(originalWord, inputWord, position, correctWord);
+    removeKeyEvent(originalWord, inputWord, position, correctWord);
 
-      input = [];
-      guesses.push([]);
-      currentGuess++;
-      positionTracker = [];
+    input = [];
+    guesses.push([]);
+    currentGuess++;
+    positionTracker = [];
    };
   }
 
@@ -102,9 +93,7 @@ if ( letter === 'BACKSPACE' && positionTracker.length !== 0 ) {
  input.pop();
 } 
 
-let j = 0;
-const unique = new Map()
-console.log('unique', unique)
+
  arr.filter((word) => {
   word === input
  })
@@ -136,19 +125,10 @@ guesses[currentGuess].forEach((guess, i) => {
 if( letter === 'ENTER' && positionTracker.length === 5 ) {
   const originalWord = arr.join('');
   const inputWord = input.join('');
-
-     removeMouseEvent(originalWord, inputWord);
-     removeKeyEvent(originalWord, inputWord);
- 
-     originalWord === inputWord ? setTimeout(() => {
-            alert('You guessed it right!')
-     }, 2500) : ""
-
-if(position === result.length) {
-  alert(`The Word is ${arr.join('')} You've lost try again!!`)
-}
-
-  
+    const correctWord = arr.join('');
+     removeMouseEvent(originalWord, inputWord, position, correctWord);
+     removeKeyEvent(originalWord, inputWord, position, correctWord);
+   
    input = [];
    guesses.push([]);
    currentGuess++;
@@ -158,7 +138,7 @@ if(position === result.length) {
 
 
 
-const removeMouseEvent = (word, guess) => {
+const removeMouseEvent = (word, guess, position, correctWord) => {
      
    keys.forEach(key => {
   
@@ -166,12 +146,69 @@ const removeMouseEvent = (word, guess) => {
    
        {
         key.removeEventListener('click', startGame);
+        document.body.innerHTML = `
+        <div class="win-ui">
+        <div>
+            <h1>You've Won!</h1>
+            <p> You completed in ${position / 5} tries</p>
+            <div class="append-words"></div>
+            <video muted loop autoplay>
+                <source src="./animation_lko317f1.mp4" type="video/mp4">
+            </video>
+        </div>
+  
+    </div>
+        `
+       } else if(position === 25 && word !== guess) {
+        `
+      <div class="win-ui">
+        <div>
+            <h1>You've Lost!</h1>
+            <p>Your word is ${correctWord}</p>
+            <video autoplay mute loop>
+            <source src="./animation_lko4tnnv.mp4" type='video/mp4'>
+            </video>
+        </div>
+    </div>
+        `
        }
   });
 }
 
-const removeKeyEvent = (word, guess) => {
-   word === guess ? window.removeEventListener('keydown', startWithKeyboard) : ''
+const removeKeyEvent = (word, guess, position, correctWord) => {
+  if(word === guess) {
+    window.removeEventListener('keydown', startWithKeyboard);
+    document.body.innerHTML = `
+      <div class="win-ui">
+      <div>
+          <h1>You've Won!</h1>
+          <p> You completed in ${position / 5} tries</p>
+          <div class="append-words"></div>
+          <video muted loop autoplay>
+              <source src="./animation_lko317f1.mp4" type="video/mp4">
+          </video>
+      </div>
+
+  </div>
+      `
+  } else if(position === 25 && word !== guess) {
+    window.removeEventListener('keydown', startWithKeyboard);
+    document.body.innerHTML = `
+    <div class="win-ui">
+    <div>
+        <h1>You've Lost!</h1>
+        <p>Your word is ${correctWord}</p>
+        <video autoplay mute loop>
+        <source src="./animation_lko4tnnv.mp4" type='video/mp4'>
+        </video>
+    </div>
+</div>
+    `
+
+  }
+
+  //  word === guess ? window.removeEventListener('keydown', startWithKeyboard) : ''
+
 }
 
 

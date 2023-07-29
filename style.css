@@ -177,3 +177,15 @@ body{
    left: 0;
    z-index: 1;
 }
+
+
+.win-ui {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   height: 90vh;
+}
+.win-ui video {
+   width: 300px;
+}
