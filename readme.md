@@ -1,16 +1,15 @@
 ### Tech Stack
-Basic Tech Stack implemented, to boost skills in the following technologies, no libraries and no frameworks. 
 ![css](https://github.com/najam3/Wordle/assets/100590374/01ac2a41-1d77-4ff1-859c-3fe0bcd184e3)
 ![html-5 (3)](https://github.com/najam3/Wordle/assets/100590374/46415170-8fdf-4fb7-9cf1-67e775db9131)
 ![js (3)](https://github.com/najam3/Wordle/assets/100590374/c18fd824-4e42-4837-972a-466ec7b3ff09)
+Basic Tech Stack implemented, to boost skills in the following technologies, no libraries and no frameworks. 
 
 ## Game Implementation
 This is Wordle clone I created, it relies on simple conditions, DOM manipulation, use of setTimeout() in very clever way to create animations. 
 Everytime the game is restarted a new word is generated for the user to guess. 
 
 # Rules
-
-
+![game-rules](https://github.com/najam3/Wordle/assets/100590374/1ed54850-d251-4c83-acbb-13d52004f3ae)
 
 
 
