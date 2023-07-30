@@ -16,4 +16,4 @@ Player is given 5 tries in which he has to get the word right if fails the game 
 Other Rules are mentioned in the game itself.
 
 # Play now
-Play](https://najam3.github.io/Wordle/
+[Play](https://najam3.github.io/Wordle/)
