@@ -15,6 +15,5 @@ Everytime the game is restarted a new word is generated for the user to guess.
 Player is given 5 tries in which he has to get the word right if fails the game simply display the correct word and you can start guessing again.
 Other Rules are mentioned in the game itself.
 
-## Play now
-
-Worlde [https://najam3.github.io/Wordle/]
+# Play now
+Play](https://najam3.github.io/Wordle/
