@@ -9,7 +9,8 @@ Basic Tech Stack implemented, to boost skills in the following technologies, no 
 ## Game Implementation
 This is Wordle clone I created, it relies on simple conditions, DOM manipulation, use of setTimeout() in very clever way to create animations. 
 Everytime the game is restarted a new word is generated for the user to guess. 
-Want to try ? [Play](https://najam3.github.io/Wordle/)
+
+###[Play](https://najam3.github.io/Wordle/)
 
 # Rules
 
