@@ -1,11 +1,22 @@
-There are many algorithms that can be used to compare two arrays and find out if the values on the indexes are same. Here are some of them:
+# Tech Stack
 
-- **Brute force method**: This method compares each element of one array with every element of the other array. If it finds a match, it returns true; otherwise, it returns false. This method has a time complexity of O(n^2).
+![css](https://github.com/najam3/Wordle/assets/100590374/01ac2a41-1d77-4ff1-859c-3fe0bcd184e3)
+![html-5 (3)](https://github.com/najam3/Wordle/assets/100590374/46415170-8fdf-4fb7-9cf1-67e775db9131)
+![js (3)](https://github.com/najam3/Wordle/assets/100590374/c18fd824-4e42-4837-972a-466ec7b3ff09)
 
-- **Sorting method**: This method sorts both arrays and then compares each element of one array with the corresponding element of the other array. If it finds a mismatch, it returns false; otherwise, it returns true. This method has a time complexity of O(n log n).
+Basic Tech Stack implemented, to boost skills in the following technologies, no libraries and no frameworks. 
 
-- **Hashing method**: This method uses a hash table to store the elements of one array and then checks if each element of the other array is present in the hash table. If it finds a match, it returns true; otherwise, it returns false. This method has a time complexity of O(n).
+## Game Implementation
 
-- **Subtraction method**: This method subtracts each element of one array from the corresponding element of the other array and then sums up all the differences. If the sum is zero, it means that both arrays have identical members; otherwise, they don't have identical members.
+This is Wordle clone I created, it relies on simple conditions, DOM manipulation, use of setTimeout() in very clever way to create animations. 
+Everytime the game is restarted a new word is generated for the user to guess. 
 
-   live demo [https://najam3.github.io/Wordle/]
+[Play now](https://najam3.github.io/Wordle/)
+
+# Rules
+
+Player is given 5 tries in which he has to get the word right if fails the game simply display the correct word and you can start guessing again.
+Other Rules are mentioned in the game itself.
+
+
+
